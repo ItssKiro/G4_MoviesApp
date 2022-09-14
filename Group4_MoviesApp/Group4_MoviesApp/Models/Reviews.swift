@@ -9,7 +9,7 @@ import Foundation
 
 
 struct ReviewRes: Codable {
-    var reviews: [Reviews]
+    var results: [Reviews]
 }
 
 struct Reviews: Codable, Identifiable {

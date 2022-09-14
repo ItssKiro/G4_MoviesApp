@@ -16,7 +16,10 @@ struct RepresentedUILabelView: UIViewRepresentable {
         let label = UILabel()
         
         label.numberOfLines = 0
-     
+        
+        label.textColor = .white
+        label.font = .systemFont(ofSize: 15)
+        
         label.lineBreakMode = .byTruncatingTail
 
         label.textAlignment = .justified

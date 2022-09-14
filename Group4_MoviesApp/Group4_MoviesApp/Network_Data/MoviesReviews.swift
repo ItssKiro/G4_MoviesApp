@@ -17,15 +17,15 @@ final class MovieReviews: ObservableObject{
     }
     
     func getMoviesReviews(){
-        
+        getReviews(for: movie)
     }
     
     private func getReviews(for movie: Movies){
-        let urlSt = "\(Self.baseURL)\(movie.id ?? 100)/reviews?api_key=\(API.key)&language=en-US"
+        let urlSt = "https://api.themoviedb.org/3/movie/\(movie.id ?? 550)/reviews?api_key=0055eebfef49750b1b839a391428b202&language=en-US"
         networkManger<ReviewRes>.fetch(from: urlSt){(result) in
             switch result{
             case .success(let Response):
-                self.reviews = Response.reviews
+                self.reviews = Response.results
             case .failure(let err):
                 print(err)
             }

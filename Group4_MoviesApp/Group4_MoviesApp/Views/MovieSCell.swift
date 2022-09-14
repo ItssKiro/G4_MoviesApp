@@ -16,10 +16,10 @@ struct MovieSCell: View {
             VStack (alignment: .leading, spacing: 0){
                 movieTitleLang
                 HStack{Text("")}
-                HStack{StarRating(rating: .constant(movie.avgSc), maxRating: 5).font(.system(size: 15))}
+                HStack{StarRating(rating: .constant(movie.avgSc), maxRating: 5).font(.system(size: 14))}
                 LazyVStack(spacing: 10) {
                 RepresentedUILabelView(attributedText: NSMutableAttributedString(string: movie.overview ?? ""))
-                        .frame(width: 245, height: 100)}
+                    .frame(width: 245, height: 100)}
         }
     }
 
@@ -38,7 +38,7 @@ struct MovieSCell: View {
         
         }
     private var movieTitleLang: some View{
-        Text(movie.titlewithLang).font(.system(size: 15)).bold().fontWeight(.heavy).foregroundColor(.blue)
+        Text(movie.titlewithLang).font(.system(size: 15)).bold().fontWeight(.heavy).foregroundColor(.white)
     }
 
     

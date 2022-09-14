@@ -8,16 +8,16 @@
 import Foundation
 
 struct ActorsRes: Codable {
-    var actor: [Actors]
+    var cast: [Actors]
 }
 
 struct Actors: Codable, Identifiable {
     var id: Int?
     var name: String?
     var character: String?
-    var profilePath: String?
+    var profile_path: String?
     var profilePhoto: String{
-        if let pth = profilePath{
-            return "https://image.tmdb.org/t/p/original/\(pth)"
+        if let pth = profile_path{
+            return "https://image.tmdb.org/t/p/original\(pth)"
         }else{return "https://picsum.photos/200/300"}
     }}

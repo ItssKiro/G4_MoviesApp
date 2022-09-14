@@ -32,17 +32,25 @@ struct Movies: Codable, Identifiable {
             return "https://image.tmdb.org/t/p/original\(pth)"
         }else{return""}
     }
-    var avgSc: Double{
-        var x = rounded(num: vote_average, places:3)/2
-        return x
+    var avgScTxt: String{
+        
+        return String(format: "%.1f", vote_average/2.0)
     }
+    var avgSc: Double{
+        
+        return vote_average/2.0
+    }
+    
+    
     var titlewithLang: String {
         guard let title = title, let lang = original_language else {return ""}
         return "\(title) (\(lang))"
     }
 }
     
-func rounded(num: Double,places:Int) -> Double {
-        let divisor = pow(10.0, Double(places))
-        return (num * divisor).rounded() / divisor
+extension Double {
+    func roundToDecimal(_ fractionDigits: Int) -> Double {
+        let multiplier = pow(10, Double(fractionDigits))
+        return Darwin.round(self * multiplier) / multiplier
     }
+}

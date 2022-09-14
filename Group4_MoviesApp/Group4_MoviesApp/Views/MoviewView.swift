@@ -28,11 +28,15 @@ struct MoviewView: View {
     }
     
     var body: some View {
+        
+        ZStack{
+            Color.init(red: 26/255, green: 31/255, blue: 49/255).edgesIgnoringSafeArea(.all)
         VStack{
+           
             VStack(alignment: .leading){
-                Text(tabs[selectionindex]).font(.largeTitle).bold().foregroundColor(.red).padding(.top)
+                Text(tabs[selectionindex]).font(.largeTitle).bold().foregroundColor(.white).padding(.top)
                 HStack{
-                    Image(systemName: "magnifyingglass.circle").imageScale(.medium)
+                    Image(systemName: "magnifyingglass.circle").imageScale(.medium).foregroundColor(.white)
                     TextField("Search A Movie...", text: $searchterm).textFieldStyle(RoundedBorderTextFieldStyle())
                 }
             }.padding(.horizontal)
@@ -63,7 +67,7 @@ struct MoviewView: View {
                                     $0.title?.lowercased().localizedStandardContains(searchterm.lowercased()) ?? true }) {movie in NavigationLink(destination: MovieDetails(movie: movie)) {
                         MovieSCell(movie: movie)
                         
-                    }.listRowBackground(Color.clear)
+                    }.listRowBackground(Color.init(red: 26/255, green: 31/255, blue: 49/255))
                 }
                 
                 }.onAppear{
@@ -72,7 +76,7 @@ struct MoviewView: View {
             Spacer()
         }
     }
-}
+    }}
 
 struct MoviewView_Previews: PreviewProvider {
     static var previews: some View {
