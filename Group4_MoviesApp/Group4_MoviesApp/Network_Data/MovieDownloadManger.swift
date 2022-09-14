@@ -27,8 +27,7 @@ final class MovieDownloadManger: ObservableObject
     }
     
     func getCast(for movie: Movies){
-        let urlSt = "\(Self.baseURL)\(movie.id ?? 100)/credits?api_key=\(API.key)&language=en-US"
-        
+        let urlSt = "https://api.themoviedb.org/3/movie/\(movie.id ?? 100)/credits?api_key=\(API.key)&language=en-US"
         networkManger<ActorsRes>.fetch(from: urlSt){(result) in
             switch result{
             case .success(let Response):

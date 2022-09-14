@@ -18,28 +18,25 @@ struct Movies: Codable, Identifiable {
     var id: Int?
     var title: String?
     var backdropPath: String?
-    var PosterPath: String?
+    var poster_path: String?
     var overview: String?
-    var voteAverage: Double?
+    var vote_average: Double
     var voteCount: Int?
     var runTime: Int?
     var releaseDate: String?
     var video: Bool?
     var adult: Bool?
     var original_language: String?
-    var Poster_P: String{
-        if let pth = PosterPath{
-            return "https://image.tmdb.org/t/p/original/\(pth)"
+    var poster_Path: String{
+        if let pth = poster_path{
+            return "https://image.tmdb.org/t/p/original\(pth)"
         }else{return""}
     }
     var avgSc: Double{
-        if let sc = voteAverage{
-            return sc / 10.0
-        }
-        else {return 0.0}
+        return vote_average / 2.0
     }
     var titlewithLang: String {
         guard let title = title, let lang = original_language else {return ""}
-        return "\(title)(\(lang))"
+        return "\(title) (\(lang))"
     }
 }

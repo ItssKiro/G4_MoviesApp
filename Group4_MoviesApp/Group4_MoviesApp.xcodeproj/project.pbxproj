@@ -26,6 +26,11 @@
 		B35E786C28CE53C5003E56DA /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = B35E786B28CE53C5003E56DA /* Alamofire */; };
 		B35E786F28CE53E9003E56DA /* NetworkManger.swift in Sources */ = {isa = PBXBuildFile; fileRef = B35E786E28CE53E9003E56DA /* NetworkManger.swift */; };
 		B35E787228CE579E003E56DA /* APIcalls.swift in Sources */ = {isa = PBXBuildFile; fileRef = B35E787128CE579E003E56DA /* APIcalls.swift */; };
+		B3770B6B28D167E1004DBD6F /* TextCT.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3770B6A28D167E1004DBD6F /* TextCT.swift */; };
+		B395416E28D14FD600BC15CA /* MovieSCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B395416D28D14FD600BC15CA /* MovieSCell.swift */; };
+		B3BDA09E28D155F2008BA8E5 /* AsyncImages.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3BDA09D28D155F2008BA8E5 /* AsyncImages.swift */; };
+		B3BDA0A128D1579E008BA8E5 /* EnvirnomentCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3BDA0A028D1579E008BA8E5 /* EnvirnomentCache.swift */; };
+		B3BDA0A428D15D87008BA8E5 /* starRating.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3BDA0A328D15D87008BA8E5 /* starRating.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -49,6 +54,11 @@
 		B35E786728CE52CA003E56DA /* Reviews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reviews.swift; sourceTree = "<group>"; };
 		B35E786E28CE53E9003E56DA /* NetworkManger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManger.swift; sourceTree = "<group>"; };
 		B35E787128CE579E003E56DA /* APIcalls.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIcalls.swift; sourceTree = "<group>"; };
+		B3770B6A28D167E1004DBD6F /* TextCT.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextCT.swift; sourceTree = "<group>"; };
+		B395416D28D14FD600BC15CA /* MovieSCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieSCell.swift; sourceTree = "<group>"; };
+		B3BDA09D28D155F2008BA8E5 /* AsyncImages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncImages.swift; sourceTree = "<group>"; };
+		B3BDA0A028D1579E008BA8E5 /* EnvirnomentCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnvirnomentCache.swift; sourceTree = "<group>"; };
+		B3BDA0A328D15D87008BA8E5 /* starRating.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = starRating.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,6 +118,8 @@
 			children = (
 				B319CB3128CE8FBA00C2B270 /* ImagesLoade.swift */,
 				B319CB3428CE90A700C2B270 /* ImageCache.swift */,
+				B3BDA09D28D155F2008BA8E5 /* AsyncImages.swift */,
+				B3BDA0A028D1579E008BA8E5 /* EnvirnomentCache.swift */,
 			);
 			path = SyncAppImages;
 			sourceTree = "<group>";
@@ -141,6 +153,9 @@
 				B35E785728CE3B4C003E56DA /* Settings.swift */,
 				B35E785A28CE4B80003E56DA /* MoviewView.swift */,
 				B35E785D28CE4B9F003E56DA /* DiscoverView.swift */,
+				B395416D28D14FD600BC15CA /* MovieSCell.swift */,
+				B3BDA0A328D15D87008BA8E5 /* starRating.swift */,
+				B3770B6A28D167E1004DBD6F /* TextCT.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -220,6 +235,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B3BDA09E28D155F2008BA8E5 /* AsyncImages.swift in Sources */,
 				B319CB3228CE8FBA00C2B270 /* ImagesLoade.swift in Sources */,
 				B319CB2F28CE8C4400C2B270 /* MoviesReviews.swift in Sources */,
 				B319CB3528CE90A700C2B270 /* ImageCache.swift in Sources */,
@@ -229,12 +245,16 @@
 				B35E785B28CE4B80003E56DA /* MoviewView.swift in Sources */,
 				B35E784528CE2B4C003E56DA /* Movies.swift in Sources */,
 				B319CB2928CE77D200C2B270 /* MoviesURL.swift in Sources */,
+				B3770B6B28D167E1004DBD6F /* TextCT.swift in Sources */,
+				B3BDA0A428D15D87008BA8E5 /* starRating.swift in Sources */,
 				B35E787228CE579E003E56DA /* APIcalls.swift in Sources */,
 				B35E786528CE51A8003E56DA /* Actors.swift in Sources */,
 				B35E782D28CE269B003E56DA /* Group4_MoviesAppApp.swift in Sources */,
 				B35E785E28CE4B9F003E56DA /* DiscoverView.swift in Sources */,
 				B35E786828CE52CA003E56DA /* Reviews.swift in Sources */,
+				B395416E28D14FD600BC15CA /* MovieSCell.swift in Sources */,
 				B35E785528CE3398003E56DA /* HomeP.swift in Sources */,
+				B3BDA0A128D1579E008BA8E5 /* EnvirnomentCache.swift in Sources */,
 				B35E785828CE3B4C003E56DA /* Settings.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -293,7 +313,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 451;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -348,7 +368,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 451;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -367,7 +387,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"Group4_MoviesApp/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = Group4_MoviesApp/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -375,7 +395,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.BanqueMisr.Group4-MoviesApp";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -388,7 +408,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"Group4_MoviesApp/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = Group4_MoviesApp/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -396,7 +416,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.BanqueMisr.Group4-MoviesApp";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

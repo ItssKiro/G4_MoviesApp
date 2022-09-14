@@ -12,6 +12,6 @@ enum moviesURL: String{
   case upcoming = "upcoming"
   case popular = "popular"
     public var urlString: String{
-        "baseURL\(self.rawValue)?api_key=\(API.key)&language=en-US&page=1"
+        "https://api.themoviedb.org/3/movie/\(self.rawValue)?api_key=\(API.key)&language=en-US&page=1"
     }
 }
