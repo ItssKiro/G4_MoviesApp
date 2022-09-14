@@ -60,7 +60,7 @@ struct MoviewView: View {
                 List {
                     ForEach(moviesManger.movies.filter {
                                 searchterm.isEmpty ? true :
-                                    $0.title?.lowercased().localizedStandardContains(searchterm.lowercased()) ?? true }) {movie in NavigationLink(destination: Text(movie.titlewithLang)) {
+                                    $0.title?.lowercased().localizedStandardContains(searchterm.lowercased()) ?? true }) {movie in NavigationLink(destination: MovieDetails(movie: movie)) {
                         MovieSCell(movie: movie)
                         
                     }.listRowBackground(Color.clear)
