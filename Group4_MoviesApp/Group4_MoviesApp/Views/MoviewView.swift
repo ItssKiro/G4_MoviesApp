@@ -16,6 +16,8 @@ struct MoviewView: View {
     
     init(){
         UITableView.appearance().backgroundColor = UIColor.clear
+        UITabBar.appearance().backgroundColor = .init(red: 26/255, green: 31/255, blue: 49/255, alpha: 0.5)
+        UITabBar.appearance().isTranslucent = true
         UITableViewCell.appearance().selectionStyle = .none
         UINavigationBar.appearance().backgroundColor = .clear
         UINavigationBar.appearance().tintColor = .white

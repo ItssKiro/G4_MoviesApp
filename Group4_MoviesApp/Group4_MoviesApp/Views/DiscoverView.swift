@@ -11,15 +11,15 @@ struct DiscoverView: View {
     @State private var offset: CGFloat = 0
     @State private var index = 0
     @ObservedObject private var movieMGr = MovieDownloadManger()
-    let spacing: CGFloat = 2
+    let spacing: CGFloat = 20
     let celbArr = Array(0...10)
     var body: some View {
         Color.clear.overlay(
         ZStack{
             Color.init(red: 26/255, green: 31/255, blue: 49/255).edgesIgnoringSafeArea(.all)
         GeometryReader{geo in
-            return ScrollView(.horizontal, showsIndicators: true){
-                HStack(){
+            return ScrollView(.horizontal, showsIndicators: false){
+                HStack(spacing: spacing){
            
                     ForEach(movieMGr.movies){movie in
                         movieCard(movie: movie)
@@ -28,7 +28,7 @@ struct DiscoverView: View {
                     
                 }
             }
-            .content.offset(x: self.offset)
+            .content.offset(x: self.offset, y: -55)
             .frame(width: geo.size.width, alignment: .leading)
             .gesture(
                 DragGesture().onChanged({(value) in
@@ -71,11 +71,11 @@ struct DiscoverView: View {
             (img) -> Image in
             Image(uiImage: img).resizable()
         }
-        .animation(.easeIn(duration: 0.5)).transition(.scale).scaledToFill()
-        .frame(width: UIScreen.main.bounds.width * 0.91, height: UIScreen.main.bounds.height * 0.76).cornerRadius(25).shadow(radius: 25)
+        .animation(.easeIn(duration: 0.5)).transition(.slide).scaleEffect()
+        .frame(width: UIScreen.main.bounds.width * 0.90, height: UIScreen.main.bounds.height * 0.80).cornerRadius(25).shadow(radius: 25)
         }
             
-    }.padding(.horizontal).padding(.top, 50)
+    }.padding().padding(.top, 1)
     }
     
     //-Mark: Details Card
@@ -86,12 +86,12 @@ struct DiscoverView: View {
                 Text(movie.title ?? "n/a")
                     .font(.title).fontWeight(.semibold).foregroundColor(.black).padding(.horizontal).padding(.top)
                 RepresentedUILabelView(attributedText: NSMutableAttributedString(string: movie.overview ?? ""))
-                    .frame(width: 345, height: 55).padding(.horizontal).padding(.top)
+                    .frame(width: 340, height: 55).padding(.horizontal).padding(.top)
                 
                 NavigationLink(destination: MovieDetails(movie: movie)){
-                    Text("Details").bold().padding().foregroundColor(.black).background(Color.orange).cornerRadius(12)
+                    Text("Details").bold().padding().foregroundColor(.white).background(Color.init(red: 26/255, green: 31/255, blue: 49/255).opacity(0.85)).cornerRadius(12)
                 }.padding()
-            }.background(Color.white.opacity(0.5)).cornerRadius(12).lineLimit(5).padding()
+            }.background(Color.gray.opacity(0.89)).cornerRadius(11).lineLimit(2).padding()
         }.padding()
     }
     
