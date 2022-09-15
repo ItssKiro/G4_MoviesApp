@@ -14,17 +14,17 @@ struct HomeP: View {
         case Discover
     }
     
-    @State private var SelectedTab = Tabs.Movie
+    @State private var SelectedTab = Tabs.Discover
     
     var body: some View {
         TabView(selection: $SelectedTab){
-            MoviewView().tabItem{
-                tabBarItem(title: "Movies", icon: "film")
-            }.tag(Tabs.Movie)
-            
             DiscoverView().tabItem{
                 tabBarItem(title: "Discover", icon: "square.stack")
             }.tag(Tabs.Discover)
+            
+            MoviewView().tabItem{
+                tabBarItem(title: "Movies", icon: "film")
+            }.tag(Tabs.Movie)
         }
     }
     

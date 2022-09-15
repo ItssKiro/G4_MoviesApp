@@ -15,10 +15,12 @@ extension UINavigationController {
 struct MovieDetails: View {
     @StateObject private var loader: ImagesLoader
     @ObservedObject private var movieManager = MovieDownloadManger()
+    @ObservedObject private var mvNew = MovieNet()
     var movie: Movies
-    
+  
     init(movie: Movies) {
     self.movie = movie
+       
         _loader = StateObject(wrappedValue: ImagesLoader(url: URL(string: movie.poster_Path)!, cache: Environment(\.imageCache).wrappedValue))
     }
     
@@ -60,7 +62,7 @@ struct MovieDetails: View {
     private var header: some View{
         HStack{
             Text(movie.title ?? "n/a").font(.system(size: 15)).fontWeight(.heavy).foregroundColor(.white).frame(width: 240, height: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, alignment: .leading)
-            Text("                                  ")
+            Text("            ")
             Image(systemName: "star.fill").foregroundColor(.yellow)
             
             Text("\(movie.avgScTxt)").font(.system(size: 15)).fontWeight(.heavy).foregroundColor(.yellow)
@@ -88,7 +90,7 @@ struct MovieDetails: View {
         HStack{
         NavigationLink(destination: MSpecifcRv(movie: movie)) {
             HStack {
-                Text("Reviews").font(.system(size: 18)).fontWeight(.medium)
+                Text("Movie Reviews").font(.system(size: 18)).fontWeight(.medium)
                     .foregroundColor(.white)
                 
             }
@@ -96,7 +98,7 @@ struct MovieDetails: View {
      Divider()
     }
      }
-     
+     //
     private var castInfo: some View{
         VStack(alignment: .leading){
             Text("Movie Cast").font(.system(size: 18)).fontWeight(.medium)

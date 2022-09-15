@@ -38,6 +38,22 @@ final class MovieDownloadManger: ObservableObject
         } //
     }
     
+    func getCeleb(for celb: [Int]){
+        for i in 0..<celb.count{
+            let castUrl = "https://api.themoviedb.org/3/person/\(i)/?api_key=0055eebfef49750b1b839a391428b202&language=en-US"
+            networkManger<ActorsRes>.fetch(from: castUrl){(result) in
+                switch result{
+                case .success(let Response):
+                    self.cast = Response.cast
+                case .failure(let err):
+                    print(err)
+                }
+            } //
+        }
+        }
+        
+    
+    
     private func getMovies(movieURL: moviesURL){
         networkManger<MovieResponse>.fetch(from: movieURL.urlString){(result) in
             switch result{

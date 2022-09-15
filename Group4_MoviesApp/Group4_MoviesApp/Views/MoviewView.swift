@@ -37,9 +37,8 @@ struct MoviewView: View {
                 Text(tabs[selectionindex]).font(.largeTitle).bold().foregroundColor(.white).padding(.top)
                 HStack{
                     Image(systemName: "magnifyingglass.circle").imageScale(.medium).foregroundColor(.white)
-                    TextField("Search A Movie...", text: $searchterm).textFieldStyle(RoundedBorderTextFieldStyle())
-                }
-            }.padding(.horizontal)
+                    TextField("Search A Movie...", text: $searchterm).background(Color.init(red: 46/255, green: 56/255, blue: 81/255)).foregroundColor(.white)}.padding().overlay(RoundedRectangle(cornerRadius: 8).stroke(Color.gray, lineWidth: 1))
+            }.padding(.horizontal).padding(.top, 50)
             
             VStack{
                 Picker("_", selection: $selectionindex){
@@ -75,7 +74,7 @@ struct MoviewView: View {
                 }
             Spacer()
         }
-    }
+        }.frame(maxWidth: .infinity, maxHeight: .infinity).edgesIgnoringSafeArea(.all)
     }}
 
 struct MoviewView_Previews: PreviewProvider {
